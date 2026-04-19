@@ -2,47 +2,44 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Morocco 2026 Jersey</title>
+<title>Morocco Jersey</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- BACK NAV -->
-<div class="nav">
-  <h2 onclick="location.href='index.html'">EliteKitsPro</h2>
-</div>
-
-<!-- PRODUCT PAGE -->
 <div class="product-page">
 
-  <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0478.jpeg">
+  <h1>Morocco Jersey</h1>
+  <p>€120</p>
 
-  <h1>Morocco 2026 Home Jersey</h1>
+  <img id="mainImg" src="https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0482.jpeg?raw=true">
 
-  <p class="price">€43</p>
+  <div class="variants">
+    <button onclick="changeImg('home')">Home</button>
+    <button onclick="changeImg('away')">Away</button>
+  </div>
 
-  <p class="desc">
-    Lightweight football jersey with a premium fan-fit design. Comfortable, breathable, and made for everyday wear or match days.
-  </p>
-
-  <!-- SIZE SELECT -->
-  <select>
-    <option>Select Size</option>
-    <option>S</option>
-    <option>M</option>
-    <option>L</option>
-    <option>XL</option>
-  </select>
-
-  <!-- BUTTON -->
-  <button onclick="alert('Added to cart (demo)')">
+  <button onclick="addToCart('Morocco Jersey', 120)">
     Add to Cart
   </button>
 
 </div>
+
+<script>
+function changeImg(type){
+  let img = document.getElementById("mainImg");
+
+  if(type === "home"){
+    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0482.jpeg?raw=true";
+  }
+
+  if(type === "away"){
+    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0485.jpeg?raw=true";
+  }
+}
+</script>
 
 </body>
 </html>
