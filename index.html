@@ -13,60 +13,23 @@
       color: white;
     }
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #222;
-    }
-
-    nav img {
-      height: 40px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
-
-    /* HERO */
-    .hero {
+    /* HEADER */
+    header {
       text-align: center;
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
 
-    .hero img {
+    header img {
       width: 140px;
-      animation: fadeIn 1.5s ease-in-out;
     }
 
-    .hero h1 {
-      font-size: 40px;
+    h1 {
       margin: 10px 0;
       letter-spacing: 2px;
     }
 
-    .hero p {
+    p {
       color: #aaa;
-    }
-
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 25px;
-      border: 1px solid white;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: white;
-      color: black;
     }
 
     /* PRODUCTS */
@@ -75,99 +38,108 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
     .card {
       background: #111;
-      padding: 20px;
-      width: 200px;
-      border-radius: 10px;
-      text-align: center;
+      width: 220px;
+      border-radius: 12px;
+      overflow: hidden;
       transition: 0.3s;
     }
 
     .card:hover {
       transform: scale(1.05);
-      background: #1a1a1a;
     }
 
     .card img {
       width: 100%;
-      border-radius: 8px;
+      height: 140px;
+      object-fit: cover;
     }
 
-    .card h3 {
-      margin: 10px 0 5px;
+    .info {
+      padding: 15px;
+      text-align: center;
     }
 
     .price {
       color: #aaa;
-      font-size: 14px;
+      margin-top: 5px;
     }
 
-    /* FOOTER */
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
       color: #555;
       border-top: 1px solid #222;
-    }
-
-    /* ANIMATION */
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
+      margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/FCD243C7-0E73-47F2-850C-54955D844359.png">
-    <div>
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">Drops</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <div class="hero">
+  <!-- LOGO -->
+  <header>
     <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/FCD243C7-0E73-47F2-850C-54955D844359.png">
     <h1>EliteKitsPro</h1>
-    <p>Premium Kits • Clean Style • Streetwear Energy</p>
-    <a href="#shop" class="btn">Shop Now</a>
-  </div>
+    <p>Reselling Premium Football & Streetwear Gear</p>
+  </header>
 
   <!-- PRODUCTS -->
-  <div class="products" id="shop">
+  <div class="products">
 
+    <!-- MOROCCO HOME -->
     <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Pro Kit 1</h3>
-      <div class="price">€29.99</div>
+      <img src="https://via.placeholder.com/300x200">
+      <div class="info">
+        <h3>Morocco 2026 Home</h3>
+        <div class="price">€40</div>
+        <a class="btn" href="#">Buy</a>
+      </div>
     </div>
 
+    <!-- MOROCCO AWAY -->
     <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Elite Kit 2</h3>
-      <div class="price">€34.99</div>
+      <img src="https://via.placeholder.com/300x200">
+      <div class="info">
+        <h3>Morocco 2026 Away</h3>
+        <div class="price">€40</div>
+        <a class="btn" href="#">Buy</a>
+      </div>
     </div>
 
+    <!-- BRAZIL WIND BREAKER -->
     <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Street Kit 3</h3>
-      <div class="price">€24.99</div>
+      <img src="https://via.placeholder.com/300x200">
+      <div class="info">
+        <h3>Brazil Windbreaker</h3>
+        <div class="price">€55</div>
+        <a class="btn" href="#">Buy</a>
+      </div>
     </div>
 
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    © 2026 EliteKitsPro • Built like a brand
+    © 2026 EliteKitsPro • Resell Store
   </footer>
 
 </body>
