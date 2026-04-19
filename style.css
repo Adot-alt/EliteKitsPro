@@ -8,24 +8,23 @@ body {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
 .hero h1 {
-  font-size: 50px;
-  letter-spacing: 2px;
+  font-size: 45px;
 }
 
 .hero p {
   color: #aaa;
 }
 
-/* PRODUCTS */
+/* PRODUCTS GRID */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  padding: 40px;
+  padding: 30px;
   max-width: 900px;
   margin: auto;
 }
@@ -35,8 +34,17 @@ body {
   background: #111;
   padding: 15px;
   border-radius: 12px;
-  width: 220px;
   text-align: center;
+  overflow: hidden;
+}
+
+/* IMAGE FIX */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
 }
 
 /* BUTTON */
@@ -48,13 +56,7 @@ button {
   border: none;
   cursor: pointer;
 }
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-}
+
 /* CART */
 .cart {
   position: fixed;
@@ -64,10 +66,5 @@ button {
   padding: 15px;
   width: 200px;
   border-radius: 10px;
-}
-
-.cart ul {
-  list-style: none;
-  padding: 0;
-  font-size: 14px;
+  z-index: 999;
 }
