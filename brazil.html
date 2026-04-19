@@ -9,35 +9,40 @@
 
 <body>
 
-<div class="nav">
-  <h2 onclick="location.href='index.html'">EliteKitsPro</h2>
-</div>
-
 <div class="product-page">
 
-  <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0475.jpeg">
-
   <h1>Brazil Windbreaker</h1>
+  <p>€120</p>
 
-  <p class="price">€120</p>
+  <img id="mainImg" src="https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0488.jpeg?raw=true">
 
-  <p class="desc">
-    Premium Brazil windbreaker with modern streetwear fit.
-  </p>
-
-  <select>
-    <option>Select Size</option>
-    <option>S</option>
-    <option>M</option>
-    <option>L</option>
-    <option>XL</option>
-  </select>
+  <div class="variants">
+    <button onclick="changeImg('blue')">Blue</button>
+    <button onclick="changeImg('white')">White</button>
+    <button onclick="changeImg('black')">Black</button>
+  </div>
 
   <button onclick="addToCart('Brazil Windbreaker', 120)">
     Add to Cart
   </button>
 
 </div>
+
+<script>
+function changeImg(color){
+  let img = document.getElementById("mainImg");
+
+  if(color === "blue"){
+    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0488.jpeg?raw=true";
+  }
+  if(color === "white"){
+    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0490.jpeg?raw=true";
+  }
+  if(color === "black"){
+    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0494.jpeg?raw=true";
+  }
+}
+</script>
 
 </body>
 </html>
