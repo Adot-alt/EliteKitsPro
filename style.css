@@ -4,50 +4,33 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #0b0b0b;
   color: white;
 }
 
-/* HERO */
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px;
 }
 
-.hero h1 {
-  font-size: 45px;
-}
-
-.hero p {
-  color: #aaa;
-}
-
-/* PRODUCTS */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  padding: 30px;
+  padding: 20px;
   max-width: 900px;
-  margin: 0 auto;
+  margin: auto;
 }
 
-/* CARD */
 .card {
   background: #111;
-  padding: 15px;
+  padding: 10px;
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.card:hover {
-  transform: scale(1.03);
-}
-
-/* IMAGE */
 .card img {
   width: 100%;
   height: 200px;
@@ -55,41 +38,23 @@ body {
   border-radius: 10px;
 }
 
-/* PRODUCT PAGE */
 .product-page {
   max-width: 600px;
-  margin: 40px auto;
+  margin: auto;
   text-align: center;
+  padding: 20px;
 }
 
 .product-page img {
   width: 100%;
-  border-radius: 12px;
-}
-
-/* VARIANTS + SIZES */
-.variants {
-  margin-top: 15px;
+  border-radius: 10px;
 }
 
 .variants button {
   margin: 5px;
   padding: 8px 12px;
-  background: white;
   border: none;
+  background: white;
   cursor: pointer;
-  font-weight: bold;
   border-radius: 6px;
-}
-
-/* CART (future ready) */
-.cart {
-  position: fixed;
-  right: 10px;
-  top: 10px;
-  background: #111;
-  padding: 15px;
-  width: 240px;
-  border-radius: 12px;
-  font-size: 14px;
 }
