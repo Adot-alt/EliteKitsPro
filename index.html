@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>EliteKitsPro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>EliteKitsPro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="nav">
   <h2>EliteKitsPro</h2>
-  <div class="nav-right">
-    <button onclick="openCart()">Cart 🛒 (<span id="cart-count">0</span>)</button>
-  </div>
+  <button onclick="openCart()">Cart 🛒 (<span id="cart-count">0</span>)</button>
 </div>
 
 <!-- HERO -->
@@ -30,11 +28,20 @@
   <!-- MOROCCO -->
   <div class="card">
     <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0478.jpeg">
-    <h3>Morocco 2026 Home Jersey</h3>
+
+    <h3>Morocco 2026 World Cup Jersey (Home)</h3>
     <p>€43</p>
 
+    <!-- SIZE SELECT -->
+    <select id="size-morocco">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+
     <div class="btn-row">
-      <button onclick="addToCart('Morocco Jersey', 43)">Add to Cart</button>
+      <button onclick="addToCart('Morocco Jersey', 43, 'size-morocco')">Add to Cart</button>
       <button onclick="buyNow('Morocco Jersey')">Buy Now</button>
     </div>
   </div>
@@ -42,11 +49,20 @@
   <!-- BRAZIL -->
   <div class="card">
     <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0475.jpeg">
+
     <h3>Brazil Windbreaker</h3>
     <p>€55</p>
 
+    <!-- SIZE SELECT -->
+    <select id="size-brazil">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+
     <div class="btn-row">
-      <button onclick="addToCart('Brazil Windbreaker', 55)">Add to Cart</button>
+      <button onclick="addToCart('Brazil Windbreaker', 55, 'size-brazil')">Add to Cart</button>
       <button onclick="buyNow('Brazil Windbreaker')">Buy Now</button>
     </div>
   </div>
@@ -58,15 +74,19 @@
   <h3>Your Cart</h3>
   <div id="cart-items"></div>
   <p>Total: €<span id="total">0</span></p>
-  <button onclick="checkout()">Checkout</button>
+
+  <button onclick="checkout()">Checkout (PayPal)</button>
 </div>
 
 <script>
+
 let cart = [];
 let total = 0;
 
-function addToCart(name, price) {
-  cart.push({name, price});
+function addToCart(name, price, sizeId) {
+  let size = document.getElementById(sizeId).value;
+
+  cart.push({name, price, size});
   total += price;
 
   document.getElementById("cart-count").innerText = cart.length;
@@ -79,7 +99,7 @@ function updateCart() {
 
   cart.forEach(item => {
     let div = document.createElement("div");
-    div.innerHTML = item.name + " - €" + item.price;
+    div.innerHTML = `${item.name} (${item.size}) - €${item.price}`;
     box.appendChild(div);
   });
 
@@ -91,12 +111,13 @@ function openCart() {
 }
 
 function buyNow(item) {
-  alert("Buying " + item + " (demo mode)");
+  alert("Redirect to PayPal for " + item);
 }
 
 function checkout() {
-  alert("Checkout system coming soon 🔥");
+  alert("Connect PayPal link here later");
 }
+
 </script>
 
 </body>
