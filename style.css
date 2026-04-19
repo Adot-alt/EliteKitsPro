@@ -37,7 +37,13 @@ body {
   text-align: center;
   overflow: hidden;
 }
+.card {
+  transition: transform 0.2s ease;
+}
 
+.card:hover {
+  transform: scale(1.03);
+}
 /* IMAGE FIX */
 .card img {
   width: 100%;
