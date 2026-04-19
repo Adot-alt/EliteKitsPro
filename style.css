@@ -34,6 +34,18 @@ body {
   border-radius: 10px;
 }
 
+/* CART */
+.cart {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background: #111;
+  padding: 15px;
+  width: 220px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
 .product-page {
   max-width: 600px;
   margin: auto;
