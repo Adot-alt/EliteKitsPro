@@ -10,32 +10,63 @@
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>EliteKitsPro</h1>
-    <p>Reselling Football Jerseys & Streetwear Gear</p>
+<!-- CART -->
+<div class="cart">
+  <h3>🛒 Cart</h3>
+  <div id="cart-items"></div>
+  <p>Total: €<span id="total">0</span></p>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>EliteKitsPro</h1>
+  <p>Reselling Football Jerseys & Streetwear Gear</p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products">
+
+  <!-- MOROCCO -->
+  <div class="card">
+    <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0478.jpeg">
+    <h3>Morocco 2026 World Cup Jersey (Home)</h3>
+    <p>€43</p>
+    <button onclick="addToCart('Morocco Jersey', 43)">Add to Cart</button>
   </div>
 
-  <!-- PRODUCTS -->
-  <div class="products">
-
-    <!-- MOROCCO JERSEY -->
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0478.jpeg">
-      <h3>Morocco 2026 World Cup Jersey (Home)</h3>
-      <p>€43</p>
-      <button>Buy</button>
-    </div>
-
-    <!-- BRAZIL WINDBREAKER -->
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0475.jpeg">
-      <h3>Brazil Windbreaker</h3>
-      <p>€55</p>
-      <button>Buy</button>
-    </div>
-
+  <!-- BRAZIL -->
+  <div class="card">
+    <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0475.jpeg">
+    <h3>Brazil Windbreaker</h3>
+    <p>€55</p>
+    <button onclick="addToCart('Brazil Windbreaker', 55)">Add to Cart</button>
   </div>
+
+</div>
+
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+  cart.push({name, price});
+  total += price;
+  updateCart();
+}
+
+function updateCart() {
+  let cartBox = document.getElementById("cart-items");
+  cartBox.innerHTML = "";
+
+  cart.forEach(item => {
+    let div = document.createElement("div");
+    div.innerHTML = item.name + " - €" + item.price;
+    cartBox.appendChild(div);
+  });
+
+  document.getElementById("total").innerText = total;
+}
+</script>
 
 </body>
 </html>
