@@ -8,9 +8,9 @@ function addToCart(name, price){
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
+  alert("Added to cart ✔");
+
   if(typeof renderCart === "function"){
     renderCart();
   }
-
-  alert("Added to cart ✔");
 }
