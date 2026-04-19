@@ -5,18 +5,34 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b0b0b; /* clean dark, not too dark */
+  background: #0b0b0b;
   color: white;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* subtle background glow (SAFE) */
-body::before {
+/* ⚽ SAFE FOOTBALL BACKGROUND (VERY SUBTLE) */
+body::after {
   content: "";
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.04), transparent);
+  inset: 0;
+  background-image:
+    url("https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"),
+    url("https://upload.wikimedia.org/wikipedia/en/c/c3/FC_Barcelona.svg"),
+    url("https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg"),
+    url("https://upload.wikimedia.org/wikipedia/en/0/0f/Morocco_national_football_team_logo.svg");
+
+  background-repeat: no-repeat;
+  background-position:
+    10% 20%,
+    80% 25%,
+    30% 80%,
+    75% 75%;
+
+  background-size: 70px;
+  opacity: 0.04;
+
+  pointer-events: none;
   z-index: -1;
 }
 
@@ -28,13 +44,14 @@ body::before {
 
 .hero h1 {
   font-size: 45px;
+  letter-spacing: 1px;
 }
 
 .hero p {
   color: #aaa;
 }
 
-/* PRODUCTS */
+/* PRODUCTS GRID */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -44,26 +61,35 @@ body::before {
   margin: 0 auto;
 }
 
-/* CARD */
+/* PRODUCT CARD */
 .card {
   background: #111;
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 14px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* NICE HOVER (premium feel) */
 .card:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
-/* IMAGE */
+/* PRODUCT IMAGE */
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+/* STOCK TEXT */
+.stock {
+  color: #ff4d4d;
+  font-size: 13px;
+  margin-top: 5px;
 }
 
 /* CART */
@@ -77,4 +103,28 @@ body::before {
   border-radius: 12px;
   font-size: 14px;
   z-index: 999;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* TEXT CLEANUP */
+h1, h2, h3 {
+  margin: 5px 0;
+}
+
+/* SMOOTH BUTTON STYLE (if you use buttons later) */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
 }
